@@ -6,12 +6,12 @@ A modern learning website focused on "vibe coding" - a structured approach to so
 
 ## Tech Stack
 
-- **Frontend Framework**: Vite + React
+- **Frontend Framework**: Astro
 - **Styling**: Tailwind CSS
 - **Content Management**: Markdown files
-- **Markdown Processing**: react-markdown + remark/rehype plugins
-- **Routing**: React Router
-- **Code Highlighting**: Prism.js or highlight.js
+- **Markdown Processing**: Built-in Astro markdown support + remark/rehype plugins
+- **Routing**: File-based routing (Astro)
+- **Code Highlighting**: Shiki (built into Astro)
 - **Deployment**: Vercel/Netlify
 
 ## Site Structure
@@ -103,26 +103,28 @@ A modern learning website focused on "vibe coding" - a structured approach to so
 ```
 website/
 ├── public/
-│   ├── favicon.ico
+│   ├── favicon.svg
 │   └── images/
 ├── src/
 │   ├── components/
 │   │   ├── Layout/
-│   │   │   ├── Header.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   └── Sidebar.jsx
+│   │   │   ├── Header.astro
+│   │   │   ├── Footer.astro
+│   │   │   └── Sidebar.astro
 │   │   ├── UI/
-│   │   │   ├── Button.jsx
-│   │   │   ├── Card.jsx
-│   │   │   └── CodeBlock.jsx
-│   │   └── MarkdownRenderer.jsx
+│   │   │   ├── Button.astro
+│   │   │   ├── Card.astro
+│   │   │   └── CodeBlock.astro
+│   │   └── Welcome.astro
+│   ├── layouts/
+│   │   └── Layout.astro
 │   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Fundamentals/
-│   │   ├── AIDevelopment/
-│   │   ├── CodingAgents/
-│   │   ├── Resources.jsx
-│   │   └── About.jsx
+│   │   ├── index.astro
+│   │   ├── fundamentals/
+│   │   ├── ai-development/
+│   │   ├── coding-agents/
+│   │   ├── resources.astro
+│   │   └── about.astro
 │   ├── content/
 │   │   ├── fundamentals/
 │   │   │   ├── git-basics.md
@@ -138,14 +140,13 @@ website/
 │   │       ├── other-agents.md
 │   │       └── workflow-optimization.md
 │   ├── styles/
-│   │   └── globals.css
-│   ├── utils/
-│   │   └── markdown.js
-│   ├── App.jsx
-│   └── main.jsx
+│   │   └── global.css
+│   └── assets/
+│       ├── astro.svg
+│       └── background.svg
 ├── package.json
-├── vite.config.js
-├── tailwind.config.js
+├── astro.config.mjs
+├── tsconfig.json
 └── README.md
 ```
 
@@ -172,7 +173,7 @@ website/
 ## Development Phases
 
 ### Phase 1: Foundation
-1. Set up Vite + React + Tailwind
+1. Set up Astro + Tailwind
 2. Create basic layout components
 3. Implement markdown rendering
 4. Build navigation structure
