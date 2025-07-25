@@ -21,9 +21,22 @@ pnpm preview
 - `src/pages/` - Astro pages and routes
 - `src/components/` - Reusable Astro components
 - `src/layouts/` - Page layout templates
+- `src/content/` - Markdown content files (auto-detected by Astro)
 - `src/styles/` - Global CSS and Tailwind imports
 - `src/assets/` - Static assets
 - `public/` - Public static files
+
+## Content Structure
+
+**Learning Modules:**
+- `src/content/fundamentals/` - Software engineering fundamentals
+- `src/content/ai-development/` - AI-assisted development workflows  
+- `src/content/coding-agents/` - AI coding agents and optimization
+
+**Page Routes:**
+- Module index pages: `/fundamentals`, `/ai-development`, `/coding-agents`
+- Dynamic content pages: `/fundamentals/[slug]`, `/ai-development/[slug]`, `/coding-agents/[slug]`
+- Static pages: `/resources`, `/about`
 
 ## Styling
 
