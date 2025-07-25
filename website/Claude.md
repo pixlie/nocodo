@@ -53,6 +53,21 @@ pnpm preview
 - Markdown-based content management
 - Modern responsive design
 
+## CI/CD
+
+**GitHub Actions Workflow**: `.github/workflows/website-ci.yml`
+- Triggers on PR and push to main when `website/` files change
+- Runs build verification and type checking
+- Uses pnpm with dependency caching for faster builds
+- Uploads build artifacts for review
+- Additional quality checks (vulnerability scanning, package validation)
+
+**Requirements for CI to pass:**
+- `pnpm install --frozen-lockfile` must succeed
+- `pnpm astro check` (TypeScript validation) must pass
+- `pnpm build` must complete without errors
+- No high-severity package vulnerabilities
+
 ## Content Areas
 
 1. **Fundamentals** - Git, CI/CD, Testing, Code Quality
