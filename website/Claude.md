@@ -21,8 +21,16 @@ pnpm preview
 - `src/pages/` - Astro pages and routes
 - `src/components/` - Reusable Astro components
 - `src/layouts/` - Page layout templates
+- `src/styles/` - Global CSS and Tailwind imports
 - `src/assets/` - Static assets
 - `public/` - Public static files
+
+## Styling
+
+**CSS Framework**: Tailwind CSS v4.1.11
+- Global styles: `src/styles/global.css`
+- Tailwind configured via `@tailwindcss/vite` plugin
+- Imported in main layout: `src/layouts/Layout.astro`
 
 ## Key Features
 
