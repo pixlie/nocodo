@@ -21,7 +21,7 @@ const {
 } = Astro.props;
 
 // Base card styles
-const baseStyles = 'bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300';
+const baseStyles = 'relative group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300';
 
 // Hover effect styles
 const hoverStyles = hover 
@@ -89,27 +89,27 @@ const additionalProps = href
     </div>
     
     <!-- Footer Section -->
-    <slot name="footer" />
-    
-    <!-- Link indicator for clickable cards -->
-    {href && (
-      <div class="mt-4 flex items-center text-blue-600 font-medium transition-transform duration-300 group-hover:translate-x-1">
-        <span class="text-sm">Learn more</span>
-        <svg 
-          class="ml-2 w-4 h-4" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M9 5l7 7-7 7"
-          ></path>
-        </svg>
-      </div>
-    )}
+    <slot name="footer">
+      <!-- Default link indicator for clickable cards when no footer slot provided -->
+      {href && (
+        <div class="mt-4 flex items-center text-blue-600 font-medium transition-transform duration-300 group-hover:translate-x-1">
+          <span class="text-sm">Learn more</span>
+          <svg 
+            class="ml-2 w-4 h-4" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      )}
+    </slot>
   </div>
 </Tag>
 
